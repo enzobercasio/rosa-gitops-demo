@@ -4,7 +4,7 @@ metadata:
   name: rosa-cluster-config
   namespace: openshift-gitops
 spec:
-  project: default
+  project: cluster-config
   source:
     repoURL: https://github.com/enzobercasio/rosa-gitops-demo.git
     targetRevision: main
