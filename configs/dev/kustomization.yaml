@@ -4,4 +4,3 @@ namespace: dev
 resources:
   - serviceaccount.yaml
   - rolebinding.yaml
-  - resourcequota.yaml
