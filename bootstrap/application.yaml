@@ -1,21 +1,20 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: rosa-cluster-config
+  name: ns-onboarding
   namespace: openshift-gitops
 spec:
-  project: cluster-config
+  project: ns-onboarding
   source:
     repoURL: https://github.com/enzobercasio/rosa-gitops-demo.git
     targetRevision: main
-    path: clusters/rosa-dev
+    path: configs
   destination:
     server: https://kubernetes.default.svc
-    namespace: openshift-gitops
+    namespace: dev
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
     syncOptions:
-      - CreateNamespace=true
-
+      - CreateNamespace=false

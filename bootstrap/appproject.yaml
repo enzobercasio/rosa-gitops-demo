@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: ns-onboarding
+  namespace: openshift-gitops
+spec:
+  description: Namespaced-safe onboarding guardrails for dev/test
+  sourceRepos:
+    - "*"
+  destinations:
+    - server: https://kubernetes.default.svc
+      namespace: dev
+    - server: https://kubernetes.default.svc
+      namespace: test
+  namespaceResourceWhitelist:
+    - group: "*"
+      kind: "*"
