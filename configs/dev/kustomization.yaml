@@ -5,3 +5,5 @@ resources:
   - serviceaccount.yaml
   - rolebinding.yaml
   - networkpolicy-default-deny.yaml
+  - limitrange.yaml
+  - resourcequota.yaml
